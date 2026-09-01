@@ -170,23 +170,10 @@
     box-shadow:var(--shadow-hover);
     background:#fff;padding:20px;
   }
-  .hero-image-wrap img{width:100%;}
-  .hero-mini-collage{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
-  }
-  .hero-mini-collage-item{
-    background:var(--bg-light);border-radius:14px;
-    display:flex;align-items:center;justify-content:center;
-    padding:12px;min-height:110px;
-  }
-  .hero-mini-collage-item img{max-height:95px;width:auto;object-fit:contain;}
+  .hero-image-wrap img{width:100%;display:block;border-radius:14px;}
 
   @media(max-width:880px){
     .hero-grid{grid-template-columns:1fr;}
-  }
-  @media(max-width:480px){
-    .hero-mini-collage-item{min-height:90px;}
-    .hero-mini-collage-item img{max-height:75px;}
   }
 
   /* ABOUT */
@@ -212,17 +199,12 @@
     box-shadow:var(--shadow);transition:.25s;
   }
   .video-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px);}
-  .video-card video{width:100%;display:block;background:#000;object-fit:cover;}
-  .video-card.is-portrait{max-width:380px;margin:0 auto;}
-  .video-card.is-portrait video{aspect-ratio:9/16;}
-  .video-card.is-landscape video{aspect-ratio:16/9;}
+  .video-card video{width:100%;aspect-ratio:16/9;display:block;background:#0b2c4a;object-fit:cover;}
   .video-info{padding:22px 26px 28px;}
   .video-info h4{font-size:18px;margin-bottom:6px;}
   .video-info p{color:var(--text-light);font-size:14.5px;}
-  @media(max-width:880px){.video-grid{grid-template-columns:1fr;gap:26px;} .video-card.is-portrait{max-width:300px;}}
+  @media(max-width:880px){.video-grid{grid-template-columns:1fr;gap:26px;}}
   @media(max-width:480px){
-    .video-card.is-portrait{max-width:230px;}
-    .video-card.is-portrait video{aspect-ratio:4/5;}
     .video-info{padding:14px 16px 18px;}
     .video-info h4{font-size:15px;margin-bottom:4px;}
     .video-info p{font-size:12.5px;}
@@ -298,6 +280,7 @@
   .tab-panel-text p{color:var(--text-light);font-size:14.5px;margin-bottom:14px;line-height:1.7;}
   .tab-panel-text p:last-child{margin-bottom:0;}
   .anomaly-title{font-size:16px;color:var(--navy);margin-bottom:12px;}
+  .pdf-guide-btn{display:inline-flex;margin-top:6px;}
   .placeholder-note{font-style:italic;color:#8FA5B5;}
   @media(max-width:620px){.tab-panel-inner{grid-template-columns:1fr;}.tab-panel{padding:24px;}}
 
@@ -392,14 +375,7 @@
       </div>
     </div>
     <div class="hero-image-wrap">
-      <div class="hero-mini-collage">
-        <div class="hero-mini-collage-item"><img src="assets/img/tensiometro.png?v=3" alt="Monitor de Presión Arterial Inteligente Deimel"></div>
-        <div class="hero-mini-collage-item"><img src="assets/img/glucometro.png?v=3" alt="Kit Medidor de Glucosa en Sangre Deimel"></div>
-        <div class="hero-mini-collage-item"><img src="assets/img/nebulizador-familiar.png?v=3" alt="Nebulizador Familiar Deimel"></div>
-        <div class="hero-mini-collage-item"><img src="assets/img/portabebe-multi.png?v=3" alt="Porta Bebé Multifuncional Deimel"></div>
-        <div class="hero-mini-collage-item"><img src="assets/img/termometro.png?v=3" alt="Termómetro Digital Fast Deimel"></div>
-        <div class="hero-mini-collage-item"><img src="assets/img/white-noise.png?v=3" alt="White Noise Machine Deimel Baby"></div>
-      </div>
+      <img src="assets/img/hero-productos.png?v=2" alt="Línea de productos de salud y bienestar Deimel: monitor de presión, nebulizadores, glucómetro, porta bebé y más">
     </div>
   </div>
 </section>
@@ -431,8 +407,8 @@
     <h2 class="section-title center">Guías en video para tu tranquilidad</h2>
     <p class="section-sub center">Aprende paso a paso a usar tus dispositivos Deimel en casa, de forma correcta y segura.</p>
     <div class="video-grid">
-      <div class="video-card is-portrait">
-        <video controls playsinline preload="metadata" poster="assets/img/cover-presion.png">
+      <div class="video-card">
+        <video controls playsinline preload="metadata" poster="assets/img/cover-presion.png?v=3">
           <source src="assets/video/presion-arterial.mp4" type="video/mp4">
           Tu navegador no soporta el video.
         </video>
@@ -441,8 +417,8 @@
           <p>Guía práctica para tomar tu presión arterial en casa con el Monitor de Presión Arterial Inteligente Deimel.</p>
         </div>
       </div>
-      <div class="video-card is-portrait">
-        <video controls playsinline preload="metadata" poster="assets/img/cover-glucometro.png">
+      <div class="video-card">
+        <video controls playsinline preload="metadata" poster="assets/img/cover-glucometro.png?v=5">
           <source src="assets/video/glucometro.mp4" type="video/mp4">
           Tu navegador no soporta el video.
         </video>
@@ -464,79 +440,80 @@
     <div class="product-grid">
 
       <div class="product-card">
-        <div class="product-img"><img src="assets/img/glucometro.png?v=3" alt="Kit Medidor de Glucosa en Sangre Deimel"></div>
+        <div class="product-img"><img src="assets/img/glucometro.png?v=4" alt="Kit Medidor de Glucosa en Sangre Deimel"></div>
         <h4>Kit Medidor de Glucosa en Sangre</h4>
         <div class="tagline">Monitorea tu nivel de azúcar en sangre desde la comodidad de tu hogar.</div>
+        <p class="desc">Incluye 25 tiras reactivas, lancetas, aplicador y estuche de transporte — todo lo necesario para medir tu glucosa en cualquier lugar. Ofrece resultados en solo 8 segundos, con muestra de sangre bidireccional y en menor cantidad, para una prueba más rápida y cómoda.</p>
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="assets/img/tensiometro.png?v=3" alt="Monitor de Presión Arterial Inteligente Deimel"></div>
+        <div class="product-img"><img src="assets/img/tensiometro.png?v=4" alt="Monitor de Presión Arterial Inteligente Deimel"></div>
         <h4>Monitor de Presión Arterial Inteligente</h4>
         <div class="tagline">Cuida tu corazón con tecnología de punta</div>
-        <p class="desc">Funciona con baterías AA o adaptador de corriente, ideal para viajes. Cuenta con alarma de arritmia y varias alarmas y resultados adicionales, memoria para 180 mediciones en total para dos personas, promedio de últimas medidas y 5 años de garantía.</p>
+        <p class="desc">Funciona con baterías AA o adaptador de corriente, ideal para viajes. Cuenta con alarma de arritmia y varias alarmas y resultados adicionales, memoria para 180 mediciones en total para dos personas, promedio de últimas medidas y 1 año de garantía. Para un resultado más preciso, mide con el brazo a la altura del corazón y mantente en calma durante la lectura.</p>
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="assets/img/nebulizador-familiar.png?v=3" alt="Nebulizador Familiar Deimel"></div>
+        <div class="product-img"><img src="assets/img/nebulizador-familiar.png?v=5" alt="Nebulizador Familiar Deimel"></div>
         <h4>Nebulizador Familiar</h4>
         <div class="tagline">Tratamiento respiratorio eficaz para toda la familia</div>
-        <p class="desc">Con compresor y pipeta de pulverización de última tecnología, genera partículas muy pequeñas que alcanzan un mayor porcentaje de medicamento en los pulmones.</p>
+        <p class="desc">Con compresor y pipeta de pulverización de última tecnología, genera partículas muy pequeñas que alcanzan un mayor porcentaje de medicamento en los pulmones. Ideal para toda la familia, de los más pequeños a los abuelos: incluye mascarillas para niños y adultos, filtros de repuesto y un agarre práctico para transportarlo con facilidad.</p>
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="assets/img/nebulizador-mini.png?v=3" alt="Nebulizador Mini Deimel"></div>
+        <div class="product-img"><img src="assets/img/nebulizador-mini.png?v=4" alt="Nebulizador Mini Deimel"></div>
         <h4>Nebulizador Mini</h4>
         <div class="tagline">Rendimiento profesional en tamaño compacto</div>
-        <p class="desc">El nebulizador más pequeño y asequible, ideal para niños. Genera partículas de menos de 5 micras para que el medicamento llegue de forma más efectiva a los pulmones.</p>
+        <p class="desc">El nebulizador más pequeño y asequible, ideal para niños. Genera partículas de menos de 5 micras para que el medicamento llegue de forma más efectiva a los pulmones. Su pipeta de pulverización de última tecnología lo hace silencioso, eficiente y muy práctico para nebulizar donde lo necesites.</p>
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="assets/img/esterilizador.png?v=3" alt="Esterilizador a Vapor Baby Deimel"></div>
+        <div class="product-img"><img src="assets/img/esterilizador.png?v=4" alt="Esterilizador a Vapor Baby Deimel"></div>
         <h4>Esterilizador a Vapor Baby Deimel</h4>
         <div class="tagline">Esteriliza y seca — 2 en 1 para la tranquilidad de mamá</div>
-        <p class="desc">Esteriliza con vapor a 100°C hasta 6 biberones eliminando el 99.9% de los gérmenes, y los seca automáticamente. Funciona con cualquier marca de biberón.</p>
+        <p class="desc">Esteriliza con vapor a 100°C hasta 6 biberones eliminando el 99.9% de los gérmenes, y los seca automáticamente. Funciona con cualquier marca de biberón. Su secado automático ahorra tiempo y evita manipular utensilios húmedos; además de biberones, esteriliza tetinas, chupetes y otros accesorios.</p>
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="assets/img/aspirador-nasal.png?v=3" alt="Aspirador Nasal Eléctrico Deimel Baby"></div>
+        <div class="product-img"><img src="assets/img/aspirador-nasal.png?v=4" alt="Aspirador Nasal Eléctrico Deimel Baby"></div>
         <h4>Aspirador Nasal Eléctrico Deimel Baby</h4>
         <div class="tagline">Descongestionamiento suave y eficaz para tu bebé</div>
-        <p class="desc">Práctico y eficiente para eliminar la mucosidad de la nariz del bebé, con diseño especial de succión y batería recargable por USB para mayor portabilidad.</p>
+        <p class="desc">Práctico y eficiente para eliminar la mucosidad de la nariz del bebé, con diseño especial de succión y batería recargable por USB para mayor portabilidad. Su forma curva facilita extraer la mucosidad desde el interior de la nariz, e incluye puntas de silicona y filtros de algodón de repuesto.</p>
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="assets/img/white-noise.png?v=3" alt="White Noise Machine Deimel Baby"></div>
+        <div class="product-img"><img src="assets/img/white-noise.png?v=4" alt="White Noise Machine Deimel Baby"></div>
         <h4>White Noise Machine Deimel Baby</h4>
         <div class="tagline">Sueño profundo y saludable para toda la familia</div>
-        <p class="desc">Sus frecuencias relajantes generan una sensación de calma al bloquear estímulos sonoros del ambiente, favoreciendo un sueño profundo y reparador.</p>
+        <p class="desc">Sus frecuencias relajantes generan una sensación de calma al bloquear estímulos sonoros del ambiente, favoreciendo un sueño profundo y reparador. Cuenta con 5 frecuencias y 6 sonidos por frecuencia, amplificador de 36 niveles y temporizador configurable a 30, 60 minutos o toda la noche.</p>
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="assets/img/termometro.png?v=3" alt="Termómetro Digital Fast Deimel"></div>
+        <div class="product-img"><img src="assets/img/termometro.png?v=4" alt="Termómetro Digital Fast Deimel"></div>
         <h4>Termómetro "Digital Fast"</h4>
         <div class="tagline">Lectura rápida y precisa para toda la familia</div>
-        <p class="desc">Punta flexible, lectura en 10 segundos y precisión clínica. Muy fácil de usar, con alarma de fiebre y memoria de última medición.</p>
+        <p class="desc">Punta flexible, lectura en 10 segundos y precisión clínica. Muy fácil de usar, con alarma de fiebre y memoria de última medición. Ideal para toda la familia, desde los recién nacidos hasta los adultos mayores del hogar.</p>
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="assets/img/portabebe-2en1.png?v=3" alt="Porta Bebé 2 en 1 Deimel"></div>
+        <div class="product-img"><img src="assets/img/portabebe-2en1.png?v=4" alt="Porta Bebé 2 en 1 Deimel"></div>
         <h4>Porta Bebé 2 en 1</h4>
         <div class="tagline">Lleva a tu bebé cerca en 4 posiciones diferentes</div>
         <p class="desc">Diseño ergonómico y transpirable que distribuye el peso del bebé uniformemente por toda la espalda, para llevarlo cómodo y seguro a cualquier lugar.</p>
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="assets/img/portabebe-multi.png?v=3" alt="Porta Bebé Multifuncional Deimel"></div>
+        <div class="product-img"><img src="assets/img/portabebe-multi.png?v=4" alt="Porta Bebé Multifuncional Deimel"></div>
         <h4>Porta Bebé Multifuncional</h4>
         <div class="tagline">9 posiciones ergonómicas para cada etapa de tu bebé</div>
-        <p class="desc">Ajustable a la edad y tamaño de tu bebé, con 9 posiciones diferentes que permiten usarlo cómodamente durante mucho más tiempo.</p>
+        <p class="desc">Ajustable a la edad y tamaño de tu bebé, con 9 posiciones diferentes que permiten usarlo cómodamente durante mucho más tiempo. Cómodo, seguro y práctico: la respuesta ideal para transportar a tu bebé a cualquier destino.</p>
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="assets/img/arnes.png?v=3" alt="Arnés de Apoyo en los Primeros Pasos"></div>
+        <div class="product-img"><img src="assets/img/arnes.png?v=4" alt="Arnés de Apoyo en los Primeros Pasos"></div>
         <h4>Arnés de Apoyo en los Primeros Pasos</h4>
         <div class="tagline">Acompaña a tu bebé en cada paso con seguridad</div>
-        <p class="desc">Soporte entre las piernas y en los hombros que sujeta el área del pecho, evitando caídas hacia atrás o adelante mientras el bebé aprende a caminar.</p>
+        <p class="desc">Soporte entre las piernas y en los hombros que sujeta el área del pecho, evitando caídas hacia atrás o adelante mientras el bebé aprende a caminar. Su enfoque 4 en 1 se adapta a cada etapa: levantamiento con o sin soporte en la entrepierna para ponerse de pie, y modo de tiro con o sin soporte para caminar con ayuda o de forma independiente.</p>
       </div>
 
     </div>
@@ -568,90 +545,121 @@
   const productosGarantia = {
     tensiometro: {
       nombre: "Monitor de Presión Arterial Inteligente",
-      img: "assets/img/tensiometro.png?v=3",
-      garantia: `<p>Este monitor de presión arterial Deimel está <strong>garantizado por 5 años</strong>.</p>
-        <p>Funciona con baterías AA o adaptador de corriente. Cuenta con alarma de arritmia y varias alarmas y resultados adicionales, y guarda hasta 180 memorias en total para dos personas.</p>`,
+      img: "assets/img/tensiometro.png?v=4",
+      garantia: `<h4 class="anomaly-title">Servicio Post Venta</h4>
+        <p>Este producto está garantizado de estar libre de defectos en los materiales o ensamblaje por <strong>un año a partir de la fecha de compra</strong>, mostrando la boleta, factura o recibo de compra.</p>
+        <p>Funciona con baterías AA o adaptador de corriente. Cuenta con alarma de arritmia y varias alarmas y resultados adicionales, y guarda hasta 180 memorias en total para dos personas.</p>
+        <p>Cualquier otra reparación no cubierta por esta garantía puede tener un cargo que varía dependiendo del daño. Por favor contacte al servicio técnico: <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a> o WhatsApp <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a>.</p>`,
       uso: `<p>Una vez colocadas las pilas, en la pantalla parpadeará el año. Para cambiarlo, presiona el botón <strong>SET</strong> hasta que aparezca el año deseado, luego el mes, el día y la hora. Así sabrás en qué día y a qué hora te mediste la presión.</p>
         <p>Es bueno medirte en la mañana al despertar y en la noche antes de acostarte, y también luego de pasar por momentos estresantes. Así podrás saber si se te sube la presión al dormir o en situaciones de estrés, y tomar acciones para evitarlo.</p>
         <p>Tómate la presión sentado, con los pies descansando en el piso. Coloca el brazalete preferiblemente en el brazo izquierdo, a la altura del corazón, sin apretar — que te quepan dos dedos entre el brazalete y el brazo. El tubo de aire debe quedar un poco inclinado hacia tu derecha, ya que por ahí pasa una arteria.</p>
         <p>Presiona el botón <strong>START/STOP</strong> y en segundos aparecerá tu lectura.</p>
-        <p>Con este tensiómetro Deimel la lectura es más rápida y el brazalete aprieta menos, ya que mide tu presión mientras se infla.</p>`,
+        <p>Con este tensiómetro Deimel la lectura es más rápida y el brazalete aprieta menos, ya que mide tu presión mientras se infla.</p>
+        <a href="assets/pdf/guia-tensiometro.pdf" target="_blank" class="btn btn-primary btn-sm pdf-guide-btn">📄 Ver guía paso a paso (PDF)</a>`,
       problemas: `<h4 class="anomaly-title">Si surge alguna anomalía durante el uso, verifica los siguientes puntos:</h4>
-        <p class="placeholder-note">Estamos preparando la tabla completa de anomalías y soluciones basada en el manual del producto. Muy pronto estará disponible aquí.</p>`
+        <p class="placeholder-note">Estamos preparando la tabla completa de anomalías y soluciones basada en el manual del producto. Muy pronto estará disponible aquí.</p>
+        <p>Mientras tanto, si tienes alguna duda o inconveniente, contáctanos directamente: 📧 <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a> · 📱 WhatsApp: <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a></p>`
     },
     glucometro: {
       nombre: "Kit Medidor de Glucosa en Sangre",
-      img: "assets/img/glucometro.png?v=3",
-      garantia: `<p class="placeholder-note">Información de garantía próximamente disponible.</p>`,
-      uso: `<p>Al inicio, luego de colocar la pila, el glucómetro pitará, la pantalla se encenderá y después se apagará: ya está listo para medir tu azúcar.</p>
-        <p>Toma la pluma (lanceta), desenrosca la tapa e inserta la lanceta con la aleta en la ranura. Presiona un poco hasta escuchar el clic. Cierra la tapa y ajusta la fuerza con la que quieres que la aguja penetre tu piel: el número 2 es para pieles muy delgadas, y el número 5 para pieles muy gruesas. Recomendamos iniciar con el número 3.</p>
-        <p>Saca una tira del envase y ciérralo bien. Coloca la tira en el medidor. Si la insertas de la manera correcta, el glucómetro se encenderá; si te equivocas y la insertas del lado equivocado, el glucómetro no se encenderá — sigue probando hasta que encienda.</p>
-        <p>Pínchate el dedo con la pluma; si no sale suficiente sangre, aprieta un poco para que salga una gotita — con eso es suficiente. Toca la gotita con la ranura de la tira, esto activará la lectura, y en segundos verás tu resultado.</p>
-        <p>Desecha la tira y la lanceta usadas.</p>`,
-      problemas: `<p class="placeholder-note">Información de solución de problemas próximamente disponible.</p>`
+      img: "assets/img/glucometro.png?v=4",
+      garantia: `<h4 class="anomaly-title">Servicio Post Venta</h4>
+        <p>Este producto está garantizado de estar libre de defectos en los materiales o ensamblaje por <strong>un año a partir de la fecha de compra</strong>, mostrando la boleta, factura o recibo de compra.</p>
+        <p>Cualquier otra reparación no cubierta por esta garantía puede tener un cargo que varía dependiendo del daño. Por favor contacte al servicio técnico: <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a> o WhatsApp <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a>.</p>`,
+      uso: `<p>Preparamos una guía ilustrada, paso a paso, para que uses tu Kit Medidor de Glucosa en Sangre Deimel de forma correcta y segura.</p>
+        <a href="assets/pdf/guia-glucometro.pdf" target="_blank" class="btn btn-primary btn-sm pdf-guide-btn">📄 Ver guía paso a paso (PDF)</a>`,
+      problemas: `<p>Si tienes alguna duda, anomalía o inconveniente con el uso de este producto, contáctanos directamente:</p>
+        <p>📧 <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a><br>📱 WhatsApp: <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a></p>`
     },
     "nebulizador-familiar": {
       nombre: "Nebulizador Familiar",
-      img: "assets/img/nebulizador-familiar.png?v=3",
-      garantia: `<p class="placeholder-note">Información de garantía próximamente disponible.</p>`,
+      img: "assets/img/nebulizador-familiar.png?v=5",
+      garantia: `<h4 class="anomaly-title">Servicio Post Venta</h4>
+        <p>Este producto está garantizado de estar libre de defectos en los materiales o ensamblaje por <strong>un año a partir de la fecha de compra</strong>, mostrando la boleta, factura o recibo de compra.</p>
+        <p>Cualquier otra reparación no cubierta por esta garantía puede tener un cargo que varía dependiendo del daño. Por favor contacte al servicio técnico: <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a> o WhatsApp <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a>.</p>`,
       uso: `<p class="placeholder-note">Instrucciones de uso próximamente disponibles.</p>`,
-      problemas: `<p class="placeholder-note">Información de solución de problemas próximamente disponible.</p>`
+      problemas: `<p>Si tienes alguna duda, anomalía o inconveniente con el uso de este producto, contáctanos directamente:</p>
+        <p>📧 <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a><br>📱 WhatsApp: <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a></p>`
     },
     "nebulizador-mini": {
       nombre: "Nebulizador Mini",
-      img: "assets/img/nebulizador-mini.png?v=3",
-      garantia: `<p class="placeholder-note">Información de garantía próximamente disponible.</p>`,
+      img: "assets/img/nebulizador-mini.png?v=4",
+      garantia: `<h4 class="anomaly-title">Servicio Post Venta</h4>
+        <p>Este producto está garantizado de estar libre de defectos en los materiales o ensamblaje por <strong>un año a partir de la fecha de compra</strong>, mostrando la boleta, factura o recibo de compra.</p>
+        <p>Cualquier otra reparación no cubierta por esta garantía puede tener un cargo que varía dependiendo del daño. Por favor contacte al servicio técnico: <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a> o WhatsApp <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a>.</p>`,
       uso: `<p class="placeholder-note">Instrucciones de uso próximamente disponibles.</p>`,
-      problemas: `<p class="placeholder-note">Información de solución de problemas próximamente disponible.</p>`
+      problemas: `<p>Si tienes alguna duda, anomalía o inconveniente con el uso de este producto, contáctanos directamente:</p>
+        <p>📧 <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a><br>📱 WhatsApp: <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a></p>`
     },
     esterilizador: {
       nombre: "Esterilizador a Vapor Baby Deimel",
-      img: "assets/img/esterilizador.png?v=3",
-      garantia: `<p class="placeholder-note">Información de garantía próximamente disponible.</p>`,
+      img: "assets/img/esterilizador.png?v=4",
+      garantia: `<h4 class="anomaly-title">Servicio Post Venta</h4>
+        <p>Este producto está garantizado de estar libre de defectos en los materiales o ensamblaje por <strong>un año a partir de la fecha de compra</strong>, mostrando la boleta, factura o recibo de compra.</p>
+        <p>Cualquier otra reparación no cubierta por esta garantía puede tener un cargo que varía dependiendo del daño. Por favor contacte al servicio técnico: <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a> o WhatsApp <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a>.</p>`,
       uso: `<p class="placeholder-note">Instrucciones de uso próximamente disponibles.</p>`,
-      problemas: `<p class="placeholder-note">Información de solución de problemas próximamente disponible.</p>`
+      problemas: `<p>Si tienes alguna duda, anomalía o inconveniente con el uso de este producto, contáctanos directamente:</p>
+        <p>📧 <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a><br>📱 WhatsApp: <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a></p>`
     },
     "aspirador-nasal": {
       nombre: "Aspirador Nasal Eléctrico Deimel Baby",
-      img: "assets/img/aspirador-nasal.png?v=3",
-      garantia: `<p class="placeholder-note">Información de garantía próximamente disponible.</p>`,
+      img: "assets/img/aspirador-nasal.png?v=4",
+      garantia: `<h4 class="anomaly-title">Servicio Post Venta</h4>
+        <p>Este producto está garantizado de estar libre de defectos en los materiales o ensamblaje por <strong>un año a partir de la fecha de compra</strong>, mostrando la boleta, factura o recibo de compra.</p>
+        <p>Cualquier otra reparación no cubierta por esta garantía puede tener un cargo que varía dependiendo del daño. Por favor contacte al servicio técnico: <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a> o WhatsApp <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a>.</p>`,
       uso: `<p class="placeholder-note">Instrucciones de uso próximamente disponibles.</p>`,
-      problemas: `<p class="placeholder-note">Información de solución de problemas próximamente disponible.</p>`
+      problemas: `<p>Si tienes alguna duda, anomalía o inconveniente con el uso de este producto, contáctanos directamente:</p>
+        <p>📧 <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a><br>📱 WhatsApp: <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a></p>`
     },
     "white-noise": {
       nombre: "White Noise Machine Deimel Baby",
-      img: "assets/img/white-noise.png?v=3",
-      garantia: `<p class="placeholder-note">Información de garantía próximamente disponible.</p>`,
+      img: "assets/img/white-noise.png?v=4",
+      garantia: `<h4 class="anomaly-title">Servicio Post Venta</h4>
+        <p>Este producto está garantizado de estar libre de defectos en los materiales o ensamblaje por <strong>un año a partir de la fecha de compra</strong>, mostrando la boleta, factura o recibo de compra.</p>
+        <p>Cualquier otra reparación no cubierta por esta garantía puede tener un cargo que varía dependiendo del daño. Por favor contacte al servicio técnico: <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a> o WhatsApp <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a>.</p>`,
       uso: `<p class="placeholder-note">Instrucciones de uso próximamente disponibles.</p>`,
-      problemas: `<p class="placeholder-note">Información de solución de problemas próximamente disponible.</p>`
+      problemas: `<p>Si tienes alguna duda, anomalía o inconveniente con el uso de este producto, contáctanos directamente:</p>
+        <p>📧 <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a><br>📱 WhatsApp: <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a></p>`
     },
     termometro: {
       nombre: "Termómetro \"Digital Fast\" Deimel",
-      img: "assets/img/termometro.png?v=3",
-      garantia: `<p class="placeholder-note">Información de garantía próximamente disponible.</p>`,
+      img: "assets/img/termometro.png?v=4",
+      garantia: `<h4 class="anomaly-title">Servicio Post Venta</h4>
+        <p>Este producto está garantizado de estar libre de defectos en los materiales o ensamblaje por <strong>un año a partir de la fecha de compra</strong>, mostrando la boleta, factura o recibo de compra.</p>
+        <p>Cualquier otra reparación no cubierta por esta garantía puede tener un cargo que varía dependiendo del daño. Por favor contacte al servicio técnico: <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a> o WhatsApp <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a>.</p>`,
       uso: `<p class="placeholder-note">Instrucciones de uso próximamente disponibles.</p>`,
-      problemas: `<p class="placeholder-note">Información de solución de problemas próximamente disponible.</p>`
+      problemas: `<p>Si tienes alguna duda, anomalía o inconveniente con el uso de este producto, contáctanos directamente:</p>
+        <p>📧 <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a><br>📱 WhatsApp: <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a></p>`
     },
     "portabebe-2en1": {
       nombre: "Porta Bebé 2 en 1",
-      img: "assets/img/portabebe-2en1.png?v=3",
-      garantia: `<p class="placeholder-note">Información de garantía próximamente disponible.</p>`,
+      img: "assets/img/portabebe-2en1.png?v=4",
+      garantia: `<h4 class="anomaly-title">Servicio Post Venta</h4>
+        <p>Este producto está garantizado de estar libre de defectos en los materiales o ensamblaje por <strong>un año a partir de la fecha de compra</strong>, mostrando la boleta, factura o recibo de compra.</p>
+        <p>Cualquier otra reparación no cubierta por esta garantía puede tener un cargo que varía dependiendo del daño. Por favor contacte al servicio técnico: <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a> o WhatsApp <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a>.</p>`,
       uso: `<p class="placeholder-note">Instrucciones de uso próximamente disponibles.</p>`,
-      problemas: `<p class="placeholder-note">Información de solución de problemas próximamente disponible.</p>`
+      problemas: `<p>Si tienes alguna duda, anomalía o inconveniente con el uso de este producto, contáctanos directamente:</p>
+        <p>📧 <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a><br>📱 WhatsApp: <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a></p>`
     },
     "portabebe-multi": {
       nombre: "Porta Bebé Multifuncional",
-      img: "assets/img/portabebe-multi.png?v=3",
-      garantia: `<p class="placeholder-note">Información de garantía próximamente disponible.</p>`,
+      img: "assets/img/portabebe-multi.png?v=4",
+      garantia: `<h4 class="anomaly-title">Servicio Post Venta</h4>
+        <p>Este producto está garantizado de estar libre de defectos en los materiales o ensamblaje por <strong>un año a partir de la fecha de compra</strong>, mostrando la boleta, factura o recibo de compra.</p>
+        <p>Cualquier otra reparación no cubierta por esta garantía puede tener un cargo que varía dependiendo del daño. Por favor contacte al servicio técnico: <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a> o WhatsApp <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a>.</p>`,
       uso: `<p class="placeholder-note">Instrucciones de uso próximamente disponibles.</p>`,
-      problemas: `<p class="placeholder-note">Información de solución de problemas próximamente disponible.</p>`
+      problemas: `<p>Si tienes alguna duda, anomalía o inconveniente con el uso de este producto, contáctanos directamente:</p>
+        <p>📧 <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a><br>📱 WhatsApp: <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a></p>`
     },
     arnes: {
       nombre: "Arnés de Apoyo en los Primeros Pasos",
-      img: "assets/img/arnes.png?v=3",
-      garantia: `<p class="placeholder-note">Información de garantía próximamente disponible.</p>`,
+      img: "assets/img/arnes.png?v=4",
+      garantia: `<h4 class="anomaly-title">Servicio Post Venta</h4>
+        <p>Este producto está garantizado de estar libre de defectos en los materiales o ensamblaje por <strong>un año a partir de la fecha de compra</strong>, mostrando la boleta, factura o recibo de compra.</p>
+        <p>Cualquier otra reparación no cubierta por esta garantía puede tener un cargo que varía dependiendo del daño. Por favor contacte al servicio técnico: <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a> o WhatsApp <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a>.</p>`,
       uso: `<p class="placeholder-note">Instrucciones de uso próximamente disponibles.</p>`,
-      problemas: `<p class="placeholder-note">Información de solución de problemas próximamente disponible.</p>`
+      problemas: `<p>Si tienes alguna duda, anomalía o inconveniente con el uso de este producto, contáctanos directamente:</p>
+        <p>📧 <a href="mailto:mercadeo@fervalgroup.com">mercadeo@fervalgroup.com</a><br>📱 WhatsApp: <a href="https://wa.me/50768138745" target="_blank">+507 6813-8745</a></p>`
     }
   };
 
